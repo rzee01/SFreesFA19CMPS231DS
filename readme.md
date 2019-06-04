@@ -13,6 +13,19 @@ Not all of us will run Windows.
 
 # Setting up - Mac OS
 
+## Common issues with Mac OS
+- When you build your programs (`make`), you may see errors like this:  
+```
+expected ';' at end of declaration list
+        auto empty() const noexcept -> bool {
+```
+These errors come from `catch.hpp` - the test framework we are using, which uses many of the more modern features of C++.  The errors are usually caused by a missing line in the CMakeLists.txt file:
+
+```
+set (CMAKE_CXX_STANDARD 11)
+```
+Compilers installed on Mac OS are a bit out dated, and need to be specifically told to use the newer C++ standard.  Just make sure the above line is in you CMakeLists.txt file, and any errors that appear to come from `catch.hpp` will go away.
+
 ## What about XCode
 Most development on Mac OS is done with XCode.  Similar to the Visual Studio / Windows dynamic described below, the problem with you only using XCode is you are stuck with a Mac - you won't be able to develop anywhere else.  If you already have XCode installed, along with `g++`, then no need to remove it.  However I urge you to use VSCode and CMake to build your programs - **not the XCode user interface**.  Please remember, ultimately I can't force you to use any specific editor - I grade you on your C++ code - but you **will** need to understand CMake, you **will** need to understand how to use the commands to create project files, build executables, and launch tests.  If you learn all that, but still secretly use Xcode - I wish you all the best :)
 
