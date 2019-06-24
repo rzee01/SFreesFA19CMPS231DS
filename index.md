@@ -5,7 +5,7 @@
 ## Week 1 (9/5)
 - **Module 00**:  Course Policies
 - **Module 01**:  Setting up your Development Environment
-- **Module 02**:  Review of Functions
+- **Module 02**:  Review of Selection, Loops, and Functions
 - **Module 03**:  Review of Arrays
 - **Module 04**:  Basics of Unit Testing 
 - **Homework 1**: (build environment, creating unit tests, proper code submission, auto-grader). Due 9/12
