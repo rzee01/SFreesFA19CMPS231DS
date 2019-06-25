@@ -7,6 +7,31 @@ class: center, middle, inverse
 - C++ is **cross-platform** - we can develop C++ on Windows, Linux, and MacOS.
 - C++ source code must be *compiled* - and **compilers are platform specific**.
 - C++ source code can be written using any editor - but you are probably familiar with a few larger **Integrated Development Environments** - for example Visual Studio.
+
+---
+# Our tools
+<div style='text-align:center;float:left;padding-top:0em;padding-right:2rem'>
+    <img style="width:100px" src="../images/git.png"/>
+    <p>git<br/>Getting code</p>
+</div>
+<div style='text-align:center;float:left;padding-top:0em;padding-right:2rem'>
+    <img style="height:100px"  src="../images/c++.png"/>    
+    <p>C++</p>
+</div>
+<div style='text-align:center;float:left;padding-top:0em;padding-right:2rem'>
+    <img style="height:100px"  src="../images/vscode.png"/>
+    <p>VSCode<br/>Editing</p>
+</div>
+<div style='text-align:center;float:left;padding-top:0em;padding-right:2rem'>
+   <img style="height:100px"  src="../images/clang.png"/>
+    <p>clang<br/>Compiling</p>
+</div>
+<div style='text-align:center;float:left;padding-top:0em;padding-right:2rem'>
+    <img style="height:100px"  src="../images/cmake.jpeg"/>
+    <p>Cmake<br/>Linking</p>
+</div>
+
+
 ---
 # Compilers
 Explain what a compiler is
