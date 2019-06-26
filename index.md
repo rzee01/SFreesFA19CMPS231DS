@@ -12,12 +12,12 @@
 ## Week 2 (9/12)
 - **Module 04**:  Review of Arrays
 - **Module 05**:  Review of Classes and Objects
-- **Lab Assignment**
+- **Lab Assignment**:  Class wrapper around an array
 
 ## Week 3 (9/19)
-- **Module 06**:  Lists with Arrays
+- **Module 06**:  Lists with Arrays (extending lab from earier week.)
 - **Module 07**:  Stacks and Queues with Arrays
-- **Lab Assignment**
+- **Lab Assignment**  Combined Stack/Query (DEQUE - Push/Pop, Shift Unshift)
 
 ## Week 4 (9/26)
 - **Module 08**:  Review of Templates
@@ -41,7 +41,7 @@
 - **Module 17**:  Binary Search Trees
 
 ## Week 9 (10/31)
-- **Module 18**:  Priority Queues, Heaps
+- **Module 18**:  Priority Queues, Heaps, STL priority_queue
 - **Lab Assignment**
 
 ## Week 10 (11/7)
