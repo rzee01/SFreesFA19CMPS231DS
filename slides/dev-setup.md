@@ -32,6 +32,7 @@ class: center, middle, inverse
 </div>
 
 
+
 ---
 # Compilers
 Explain what a compiler is
@@ -70,21 +71,21 @@ CMake is a tool to replace much of what `make` does in UNIX environments.
 This environment will work the same whether you use Windows, Mac OS, or Linux.
 ---
 # Setting yourself up
-**Windows** - The easiest path is to install Cygwin. 
+**Windows** - The easiest path is to install Cygwin. See the [Windows Guide](../guies/dev-setup-windows.html)
 
-**Mac OS** - You do not need Xcode, and if you haven't already installed it, I don't recommend that you do for this class.
+**Mac OS** - You do not need Xcode, and if you haven't already installed it, I don't recommend that you do for this class.  See the [Mac OS Guide](../guies/dev-setup-macos.html)
 
-**Linux** - The instructions for Linux are very straigtforward.
+**Linux** - The instructions for Linux are very straigtforward.  See the [Linux Guide](../guies/dev-setup-linux.html)
 
-.callout[I have prepared **detailed instructions** for each platform [here](../code/readme.html)]
+.callout[I have additional details [here](../code/readme.html)]
 
 ---
 <img style="float:left;width:70px;padding-top:1em;padding-right:2rem" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"/>
+
 # Getting source code
 
 .info[Git is a source version control system.  It's used *everywhere*.  We won't use many of its features in this class, only to get the code for the course, and updates throughout the semester.]
 
-Install `git` using instructions [here](../code/readme.html)
 
 ```bash
 mkdir my_school_work
