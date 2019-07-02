@@ -242,10 +242,12 @@ for ( int i =0 ; i < 50; i+= 3) {  // skipping
 
 ---
 # Example:  Histogram
-Allow the user to enter as many integers they want, but the numbers need to be between 0-99.  They can enter -1 to indicate they are done.  **Print the number of times each number was entered (omitting numbers that were never entered).
+Allow the user to enter as many integers they want, but the numbers need to be between 0-99.  They can enter -1 to indicate they are done.  **Print the number of times each number was entered** (omitting numbers that were never entered).
 - Create an array of size 100
 - Initialize them all to 0
-- for every number the user types in...
+- for every number the user types in... call `sample(input)`
   - validate it is between 0 and 99 (inclusive)
   - increment the value stored at the element corresponding to the input
 - When the user is done (-1 is entered), print out all the array indices whose value is > 0.
+
+.callout[**Let's not forget TDD!**]
