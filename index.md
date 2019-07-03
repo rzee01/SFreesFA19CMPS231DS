@@ -21,7 +21,7 @@
 
 ## Week 4 (9/26)
 - **Module 08**:  Review of Templates
-- **Module 09**:  C++ Vectors, Queue, Stack, Deque (Introduction to the STL)
+- **Module 09**:  STL:  Vectors, Queue, Stack, Deque
 - **Module 10**:  Big O Notation and Algorithm Analysis
 
 ## Week 5 (10/3)
