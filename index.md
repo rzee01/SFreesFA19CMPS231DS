@@ -7,21 +7,21 @@
 - **Module 01**:  Setting up your Development Environment       [/]
 - **Module 02**:  Review of Selection, Loops, and Functions     [/]
 - **Module 03**:  Basics of Unit Testing                        [/]
-- **Lab Assignment**:  sort-in-place                            [/]
+- **Lab Assignment**:  sort-in-place                            [X]
 
 ## Week 2 (9/12)
 - **Module 04**:  Review of Arrays                              [/]
 - **Module 05**:  Review of Classes and Objects                 [/]
-- **Lab Assignment**:  Class wrapper around an array
+- **Lab Assignment**:  Class wrapper around an array            [X]
 
 ## Week 3 (9/19)
-- **Module 06**:  Lists with Arrays (insert/delete, sorted)
-- **Module 07**:  Stacks and Queues with Arrays
-- **Lab Assignment**  Combined Stack/Query (DEQUE - Push/Pop, Shift Unshift)
+- **Module 06**:  Lists with Arrays (insert/delete, sorted)     [/] - need code examples
+- **Module 07**:  Stacks and Queues with Arrays                 [/] - need code examples
+- **Lab Assignment**  Combined Stack/Query                      [X]
 
 ## Week 4 (9/26)
 - **Module 08**:  Review of Templates
-- **Module 09**:  C++ Vectors (Introduction to the STL)
+- **Module 09**:  C++ Vectors, Queue, Stack, Deque (Introduction to the STL)
 - **Module 10**:  Big O Notation and Algorithm Analysis
 
 ## Week 5 (10/3)
