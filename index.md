@@ -3,19 +3,19 @@
 # Schedule
 
 ## Week 1 (9/5)
-- **Module 00**:  Course Policies
-- **Module 01**:  Setting up your Development Environment
-- **Module 02**:  Review of Selection, Loops, and Functions
-- **Module 03**:  Basics of Unit Testing 
-- **Lab Assignment**:  sort-in-place
+- **Module 00**:  Course Policies                               [/]
+- **Module 01**:  Setting up your Development Environment       [/]
+- **Module 02**:  Review of Selection, Loops, and Functions     [/]
+- **Module 03**:  Basics of Unit Testing                        [/]
+- **Lab Assignment**:  sort-in-place                            [/]
 
 ## Week 2 (9/12)
-- **Module 04**:  Review of Arrays
-- **Module 05**:  Review of Classes and Objects
+- **Module 04**:  Review of Arrays                              [/]
+- **Module 05**:  Review of Classes and Objects                 [/]
 - **Lab Assignment**:  Class wrapper around an array
 
 ## Week 3 (9/19)
-- **Module 06**:  Lists with Arrays (extending lab from earier week.)
+- **Module 06**:  Lists with Arrays (insert/delete, sorted)
 - **Module 07**:  Stacks and Queues with Arrays
 - **Lab Assignment**  Combined Stack/Query (DEQUE - Push/Pop, Shift Unshift)
 
@@ -29,7 +29,7 @@
 - **Module 12**:  Linked Lists
 
 ## Week 6 (10/10)
-- **Exam 1**:  Covers all material up to *and including* linked lists.  Exam will be three hours, and including coding.  It will be open notes, open book, and open internet (subject to academic integrity expecations).
+- **Exam 1**:  Covers all material up to *and including* linked lists.  Exam will be three hours, and including coding.  It will be open notes, open book, and open internet (subject to academic integrity expectations).
 
 ## Week 7 (10/17)
 - **Module 13**:  Autos and Smart Pointers

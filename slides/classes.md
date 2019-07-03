@@ -235,8 +235,6 @@ Let's build a list class.
 - It supports the following methods:
     - `prepend` and `append` - which adds a value to the *front* and *end*.
       - Throw `length_error` if size would exceed 100
-    - `remove` - which accepts an index, and removes the value found there.
-      - Throw `out_of_range` error if index is invalid
     - `get` - which returns the value at a particular index.  The `get` method should prevent invalid indexes from being accessed.
       - Throw `out_of_range` error if index is invalid
     - `find` - returns the index where a value can be found, or -1 if it doesn't exist.
