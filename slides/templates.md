@@ -30,7 +30,7 @@ Thankfully C++ has *templates*, which allow us to write generic containers (and 
 
 ---
 # Template functions
-Let's start simple, with one of the functions we created a few weeks ago:
+Let's start simple, with a function we created a few weeks ago:
 
 ```c++
 const int ASCENDING = 1;
@@ -146,7 +146,7 @@ make: *** [all] Error 2
 ```
 
 ---
-# Templates aren't just libraries
+# Templates aren't libraries
 Recall that templates are never part of an executable... the compiler uses them to **generate** new code, for the particular data type you use the template with.
 
 This means the compiler needs to understand a bit more, and the linking step needs to be a bit more sophisticated...
@@ -201,3 +201,100 @@ int classify(const T & a, const T &b, const T &c){
 }
 ```
 .callout[**Important**:  the use of `const` is valuable - because once you've changed to pass-by-reference, you open yourself up to bugs and confusion.  `const` allows the compiler to verify that the contents of the variables to not change.]
+
+
+---
+# Templates for Containers
+We should be able to hold lists of `Rational` numbers!
+
+```cpp
+#include <stdexcept>
+// Don't write "using namespace std" in template headers
+
+template <typename T>
+class ArrayList
+{
+public:
+    ArrayList();
+    void prepend(T value);
+    void append(T value);
+    T get(int index) const;                // Note, not every int turned to T
+    int find(T value) const;               // Indexes are ints no matter what
+    int length() const;                    // type of data is in the array!
+    static const int CAPACITY = 100;
+
+private:
+    T data[ArrayList::CAPACITY];
+    int count;
+};
+```
+
+---
+# Multiple types in an list?
+**Nope**, templates don't let you do that (unless you apply more complex techniques).
+
+- `T` is a variable, resolved **at compile time**.
+- `T` can only be one thing at a time, for a given template code unit.
+
+--
+- When defining a method that accepts a list of things of type `T`, everything in the list *must* be of type T. 
+- When defining a class that holds multiple things of type `T`, the instance of the class can only hold type `T`!
+
+.callout[
+There is nothing stopping you from creating multiple `ArrayLists` with different types for `T` though:
+] 
+```cpp
+ArrayList<int> intList;             // OK
+ArrayList<float> floatList;         // OK 
+ArrayList<Rational> rationalList;   // OK
+intList.append(Rational(1,3));      // Compiler error - type mismatch
+```
+
+---
+# More abilities...
+Let's override the `[]` operator to allow indexing...
+
+```cpp
+template <typename T>
+class ArrayList
+{
+public:
+    ...
+    T get(int index) const;
+    ...
+    T & operator[] (const int);   // < new overload
+};
+```
+- Why are we returning using reference?
+--
+
+- Can we just implement this by calling `get`?
+ - There are pros/cons to re-using get.  We'd need to drop the `const` and make it a proper `l-value`
+ - An `l-value` is an expression that can appear on the left side of `=` assignment.  By definition, something which is const cannot!
+
+---
+# Now we've got something...!
+- We have a re-usable ArrayList
+- We can use it with any data type that supports relational operators
+- Now it's worth refining it, adding lots of features - because it's not a "one off" solution!
+
+.callout[
+- C++ includes a **Standard Template Library** (STL), which provides us with *many* data structures and algorithms.
+- It's called STL because in order to make them useful, the must all be template functions/classes!
+]
+
+---
+# Why this class is not over.
+You are probably thinking... so this class is now just about learning STL?
+--
+.callout[
+- **No!**, if you call yourself a computer scientist, you need to understand how classic data structures and algorithms actually work.
+ - ... so you know which to use, for the problems you need to solve
+ - ... so you can *apply* the knowledge in domains where the STL won't help you
+]
+--
+
+- Throughout the rest of the semester, we will follow a pattern:
+ 1. We will learn how to create a simple implementation of a classic data structure or algorithm.
+ 2. Once we've got it, we'll switch to studying the STL implementation - which will be more sophisticated.
+ 3. Repeat for the next data structure of algorithm.

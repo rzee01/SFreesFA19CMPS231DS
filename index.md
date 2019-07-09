@@ -20,8 +20,8 @@
 - **Lab Assignment**  Combined Stack/Query                      [X]
 
 ## Week 4 (9/26)
-- **Module 08**:  Review of Templates
-- **Module 09**:  STL:  Vectors, Queue, Stack, Deque
+- **Module 08**:  Review of Templates                           [X]
+- **Module 09**:  STL:  Vectors, Queue, Stack, Deque            [X]
 - **Module 10**:  Big O Notation and Algorithm Analysis
 
 ## Week 5 (10/3)
