@@ -22,19 +22,19 @@
 ## Week 4 (9/26)
 - **Module 08**:  Review of Templates                           [X]
 - **Module 09**:  STL:  Vectors, Queue, Stack, Deque            [X]
-- **Module 10**:  Big O Notation and Algorithm Analysis
+- **Module 10**:  Big O Notation and Algorithm Analysis         
 
 ## Week 5 (10/3)
-- **Module 11**:  Review of Pointers
-- **Module 12**:  Linked Lists
+- **Module 11**:  Review of Pointers                            [x]  <- turn in to lab, or create dynamic vector code
+- **Module 12**:  Linked Lists                                  [ ]
 
 ## Week 6 (10/10)
-- **Exam 1**:  Covers all material up to *and including* linked lists.  Exam will be three hours, and including coding.  It will be open notes, open book, and open internet (subject to academic integrity expectations).
+- **Module 13**:  Autos and Smart Pointers
+- **Module 14**:  Linked Lists w/ automatic memory management
+- **Module 15**:  Sorted Linked Lists
 
 ## Week 7 (10/17)
-- **Module 13**:  Autos and Smart Pointers
-- **Module 14**:  Improved Linked Lists w/ automatic memory management
-- **Module 15**:  Sorted Linked Lists
+- **Exam 1**:  Covers all material up to *and including* linked lists.  Exam will be three hours, and including coding.  It will be open notes, open book, and open internet (subject to academic integrity expectations).
 
 ## Week 8 (10/24)
 - **Module 16**:  Recursion
