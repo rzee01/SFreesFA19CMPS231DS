@@ -73,7 +73,7 @@ We can remember where the *first* `Node` is by holding a **pointer** to it.
 # A chain of `node`s
 One more problem... what should the value of `next` be in that last `node`?
 
-PICTURE With HEAD and tail as NULL
+PICTURE With HEAD and tail as nullptr
 
 .callout[
 We can remember where the *first* `Node` is by holding a **pointer** to it.  
@@ -88,7 +88,7 @@ We can remember where the *first* `Node` is by holding a **pointer** to it.
 class List {
     public: 
         List() {
-            head = NULL; // When we start, there is no first element.
+            head = nullptr; // When we start, there is no first element.
         }
         ~List() { /* who wants to bet we have to clean up things here?*/ }
     private:
@@ -108,12 +108,27 @@ There is nothing wrong with making `data` and `next` private, and providing acce
 ]
 ---
 # List implementation
+We can re-use the same test cases from the `vector` module, with some adjustments in method names..
+
 Let's start with some easy methods:
 - `is_empty` - return `true` if the list is empty.
 - `push_front` - add something to the front.
 - `front` - return data in first element (**throw if empty**)
 - `pop_front` - remove the front of list (**throw if empty**)
 - `size` - return number of elements in the list.
+
+.callout[
+**Distinct cases**:  Adding / removing from an empty list, a list with just one element, and a list with N > 1 elements.
+]
+---
+# Memory (de)allocation
+We are creating `node`s on the heap inside `List` - so we need to clean up!
+- **clear** - public method to dispose of the list contents, **if user wants to do this!**.
+- **~List** - destructor, can call `clear` itself.
+
+.callout[
+**Remember**, while it is OK to have a public method to perform de-allocation, we **never** rely on the user of the class to call it - we **always** clean up after ourselves within the destructor!
+]
 ---
 # List implementation (2)
 Now let's add some capabilties:

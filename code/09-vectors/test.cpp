@@ -9,12 +9,6 @@
 #include <queue>
 using namespace std;
 
-TEST_CASE("Vector has no size on construction")
-{
-    vector<int> v;
-    REQUIRE(v.size() == 0);
-}
-
 TEST_CASE("push_back adds to the back of the vector")
 {
     vector<int> v;

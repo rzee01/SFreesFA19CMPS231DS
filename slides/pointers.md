@@ -288,16 +288,16 @@ if ( ptr3 == "the abyss?") {
 int x = 5;
 int * ptr1 = new int(10);
 int * ptr2 = new int(20);
-int * ptr3 = NULL;  // ALWAYS INITIALIZE if not yet assigned!
+int * ptr3 = nullptr;  // ALWAYS INITIALIZE if not yet assigned!
 
 ... 100s of lines later...
 
-if ( ptr3 != NULL ) {
+if ( ptr3 != nullptr ) {
     *ptr3 = 15;  
 }
 ```
 .callout[
-Unitialized pointers have data in them... that look just like addresses - they are random integers.  Always initialize to NULL so you can check against a known value.  NULL is equal to 0, but it is **extremely** bad practice to use `0`.
+Unitialized pointers have data in them... that look just like addresses - they are random integers.  Always initialize to nullptr so you can check against a known value. 
 ]
 
 
@@ -317,7 +317,7 @@ delete ptr3;  // Done using it!
 
 ... 100s of lines later...
 
-if ( ptr3 != NULL ) {
+if ( ptr3 != nullptr ) {
     *ptr3 = 15;  // Crash (?)
 }
 ```
@@ -339,11 +339,11 @@ int * ptr3 = new int(30);
 ... 100s of lines later..
 
 delete ptr3;  // Done using it!
-ptr3 = NULL   // Always reset to NULL so you can check later.!
+ptr3 = nullptr   // Always reset to nullptr so you can check later.!
 
 ... 100s of lines later...
 
-if ( ptr3 != NULL ) {
+if ( ptr3 != nullptr ) {
     *ptr3 = 15;  // Crash (?)
 }
 ```
