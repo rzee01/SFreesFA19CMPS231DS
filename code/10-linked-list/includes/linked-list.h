@@ -65,35 +65,8 @@ public:
 
     void clear()
     {
-        // Clear out all of our nodes -
-        // Start at the first element
-        // Note, since head is node<T> *, auto will
-        // know current is the same type.  Saves some typing,
-        // and is the proper way to do things.
-        auto *current = head;
-        while (current != nullptr)
-        {
-            // don't delete the current yet, because
-            // we won't be able to go to the next element (node)
-            // Note:  next could be NULL - if current is the
-            //        last element - but that's OK, we aren't
-            //        really using it on this iteration.
-            auto *next = current->next;
-            // Now we can delete this node, since we've
-            // copied a pointer to it's neighbor into "next"
-            delete current;
-
-            // Set current to next so we can continue processing.
-            // Note that since next would be null, if current
-            // was the last node, the loop will now break, and
-            // we are done.
-            current = next;
-        }
-        // Set our key pointers, head and tail to NULL, since the list
-        // is now empty.
-        head = nullptr;
-        tail = nullptr;
-        length = 0; // Nothing hear anymore.
+        while (!is_empty())
+            pop_front();
     }
 
     void push_back(T value)
@@ -107,7 +80,7 @@ public:
         }
         // List has at least one element, so this is going to
         // become the next tail.
-        auto *new_tail = new node<T>(nullptr, tail, value);
+        auto new_tail = new node<T>(nullptr, tail, value);
         tail->next = new_tail;
         tail = new_tail;
         length++;
@@ -124,16 +97,25 @@ public:
         // be whatever the current tail's previous is.
         // We will be deleting the old tail,so we need
         // to save a pointer to it.
-        auto *old_tail = tail;
-        tail = tail->prev;
+        auto old_tail = tail;
+        tail = tail->prev; // tail is now the second to last element
         delete old_tail;
+
         // It is possible this was the only element in the list,
-        // if so, tail will point to nothing - as the old tail
-        // was also the head.  Check, and make sure we update head
-        // in that case.
+        // if so, tail will point to nothing (there was no second to last
+        // element) - as the old tail was also the head.
         if (tail == nullptr)
         {
+            // We just deleted the only element, head
+            // needs to point to null now too.
             head = nullptr;
+        }
+        else
+        {
+            // Otherise, tail points to real element, and that
+            // element used to point to the old tail - and it
+            // no longer should - it's the end of the list!
+            tail->next = NULL;
         }
         // Note, in all other cases (there were 2 or more elements),
         // head would not change.
@@ -158,7 +140,7 @@ public:
         {
             // this is the current, head, it will need to point back
             // to the new node.
-            auto *old_head = head;
+            auto old_head = head;
             // New node is going in the front, but so next points
             // to the old head.  It's at the front, so prev is still nullptr.
             head = new node<T>(head, nullptr, value);
@@ -183,13 +165,21 @@ public:
         // Head's next either points to the second element (new head),
         // or it points to nullptr, meaning there is only one
         // element in the list.
-        auto *old_head = head; // save for deletion.
+        auto old_head = head; // save for deletion.
         head = head->next;
         if (head == nullptr)
         {
             // We deleted the only element, so there is
             // no longer a tail.
             tail = nullptr;
+        }
+        else
+        {
+            // The current head is what used to be the second
+            // element in the list.
+            // We deleted the element in front of it, so we
+            // better make sure it's previous pointer is now null!
+            head->prev = nullptr;
         }
         // Delete the old head, and reduce length.
         delete old_head;
@@ -232,7 +222,7 @@ private:
         std::cerr << "---------------------------" << std::endl;
         std::cerr << "Debug print of list:  size = " << size() << std::endl;
 
-        auto *current = head;
+        auto current = head;
         while (current != nullptr)
         {
             std::cerr << current << ":  " << current->prev << " <= " << current->data << " => " << current->next << std::endl;
@@ -275,7 +265,6 @@ public:
     }
     ~iterator<T>()
     {
-        std::cerr << "Destructor called" << std::endl;
     }
 
 private:

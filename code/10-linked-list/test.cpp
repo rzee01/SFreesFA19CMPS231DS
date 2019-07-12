@@ -211,8 +211,8 @@ TEST_CASE("Pop back removes the end of the list and updates length")
     list.pop_back();
     REQUIRE(list.size() == 2);
     REQUIRE(list.back() == 15);
+    REQUIRE(true);
 }
-
 TEST_CASE("Push back can insert into empty list")
 {
     List<int> list;

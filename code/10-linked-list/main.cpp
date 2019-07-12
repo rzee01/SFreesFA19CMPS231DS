@@ -1,18 +1,32 @@
 #include <iostream>
 #include "linked-list.h"
 using namespace std;
-int main()
+void go()
 {
     List<int> list;
-    for (int i = 0; i < 500; i++)
+    for (int i = 0; i < 10; i++)
     {
         list.push_back(i);
     }
 
-    List<int> list2;
-    for (int i = 0; i < 500; i++)
+    for (int i = 0; i < 10; i++)
     {
-        list2.push_front(i);
+        list.push_front(i);
     }
-    // left as excercise...
+
+    auto it = list.begin();
+    while (it.valid())
+    {
+        cout << it.data() << endl;
+        it.next();
+    }
+}
+
+int main()
+{
+    for (int i = 0; i < 3; i++)
+    {
+        go();
+        go();
+    }
 }
