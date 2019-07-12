@@ -123,8 +123,8 @@ Let's start with some easy methods:
 ---
 # Memory (de)allocation
 We are creating `node`s on the heap inside `List` - so we need to clean up!
-- **clear** - public method to dispose of the list contents, **if user wants to do this!**.
-- **~List** - destructor, can call `clear` itself.
+- **`clear`** - public method to dispose of the list contents, **if user wants to do this!**.
+- **`~List`** - destructor, can call `clear` itself.
 
 .callout[
 **Remember**, while it is OK to have a public method to perform de-allocation, we **never** rely on the user of the class to call it - we **always** clean up after ourselves within the destructor!
@@ -230,6 +230,8 @@ while (i < list.end()) {
 }
 ```
 .callout[
-We aren't overloading all the operators, so we will stick with `end` pointing to `tail` - the last valid element.  **However** keep this difference in mind when using STL!
+We aren't overloading all the operators, so we will stick with `end` pointing to `tail` - the last valid element.  
+
+**However** keep this difference in mind when using STL!
 ]
 

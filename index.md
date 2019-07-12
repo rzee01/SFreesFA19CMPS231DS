@@ -17,7 +17,7 @@
 ## Week 3 (9/19)
 - **Module 06**:  Lists with Arrays (insert/delete, sorted)     [/] - need code examples
 - **Module 07**:  Stacks and Queues with Arrays                 [/] - need code examples
-- **Lab Assignment**  Combined Stack/Query                      [X]
+- **Lab `Assignment**  Combined Stack/Query                      [X]
 
 ## Week 4 (9/26)
 - **Module 08**:  Review of Templates                           [X]
