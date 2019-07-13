@@ -17,7 +17,7 @@
 ## Week 3 (9/19)
 - **Module 06**:  Lists with Arrays (insert/delete, sorted)     [/] - need code examples
 - **Module 07**:  Stacks and Queues with Arrays                 [/] - need code examples
-- **Lab `Assignment**  Combined Stack/Query                      [X]
+- **Lab `Assignment**  Combined Stack/Query                     [X]
 
 ## Week 4 (9/26)
 - **Module 08**:  Review of Templates                           [X]
@@ -25,20 +25,22 @@
          
 
 ## Week 5 (10/3)
-- **Module 10**:  Review of Pointers                            [/]  <- turn in to lab, or create dynamic vector code
-- **Module 11**:  Linked Lists                                  [/]  <- create pictures, code examples (iterator on slide)
+- **Module 10**:  Review of Pointers                            [X]  (Try to move to week 4 if possible...)
+- **Module 11**:  Linked Lists                                  [/]  <- create pictures
 
 ## Week 6 (10/10)
 - **Module 12**:  Smart Pointers:  Linked Lists w/ automatic memory management
 - **Module 13**:  STL List
-- **Module 14**:  Big O Notation and Algorithm Analysis
-- **Lab Assignment**:  Sorted Linked Lists - Adapter on STL
+- **Module 14**:  Finding in Unsorted and Sorted list
+- **Module 15**:  Big O Notation and Algorithm Analysis
+- Review for exam
 
 ## Week 7 (10/17)
-- **Exam 1**:  Covers all material up to *and including* linked lists.  Exam will be three hours, and including coding.  It will be open notes, open book, and open internet (subject to academic integrity expectations).
+- **Exam 1**:  Covers all material up to *and including* linked lists.  Big O notation will not be covered.  Exam will be three hours, and including coding.  It will be open notes, open book, and open internet (subject to academic integrity expectations).
 
 ## Week 8 (10/24)
-- **Module 16**:  Recursion
+- **Module 15**:  Big O Notation and Algorithm Analysis (Revisit)
+- **Module 16**:  Recursion - binary search on arrays.
 - **Module 17**:  Binary Search Trees
 
 ## Week 9 (10/31)
