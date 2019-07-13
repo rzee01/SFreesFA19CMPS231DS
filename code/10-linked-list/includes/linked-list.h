@@ -52,6 +52,11 @@ public:
         return iterator<T>(head);
     }
 
+    iterator<T> end() const
+    {
+        return iterator<T>(tail);
+    }
+
     bool is_empty() const
     { // Don't forget to mark things as const if they are!
         // head will always point to the first element,
@@ -69,6 +74,28 @@ public:
             pop_front();
     }
 
+    // Insert in front of the given iterator.
+    void insert(iterator<T> pos, T value) {
+        if (!pos.valid()) {
+            throw std::out_of_range("Cannot insert given an invalid iterator");
+        }
+        // Let's re-use existing functions if we are being asked to add
+        // to the beginning or end of the list.
+        // since we have private access, we can check target directly.
+        // pointers are just addresses - so it's fair to test for equality.
+        if ( pos.target == head) {
+            push_front(value);
+        } else if ( pos.target == tail) {
+            push_back(value);
+        } else {
+            // Inserting before an element which has an element before it, and after it...
+            auto before = pos.target->prev;
+            auto after = pos.target;
+            auto new_node = new node<T>(after, before, value);
+            after->prev = new_node;
+            before->next = new_node;
+        }
+    }
     void push_back(T value)
     {
         if (is_empty())
@@ -235,7 +262,7 @@ template <typename T>
 class iterator
 {
 public:
-    void next()
+    void forward()
     {
         if (!valid())
         {

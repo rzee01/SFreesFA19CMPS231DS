@@ -235,3 +235,22 @@ We aren't overloading all the operators, so we will stick with `end` pointing to
 **However** keep this difference in mind when using STL!
 ]
 
+---
+# Back to insert / remove
+- **`insert`** accept an iterator and a value, insert in front of iterator.
+- **`remove`** accept an iterator and remove the element at that location.
+
+
+.info[
+In both cases, if the iterator is invalid, we should throw an exception.
+]
+
+---
+# Some design flaws
+Notice that you can't add at the end of the list with `insert`?  
+- If we changed the behavior to add after the given iterator, then we couldn't add at front.
+- Overloading < won't work as nicely as it does with STL containers, since when our iterator goes past the tail, and doesn't contain a previous reference.
+
+.callout[
+We've taken our design as far as we need to go for now - but you should understand that there is a lot of value in using STL - as the designers of the language have created excellent interfaces for you to use!
+]

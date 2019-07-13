@@ -18,7 +18,7 @@ void go()
     while (it.valid())
     {
         cout << it.data() << endl;
-        it.next();
+        it.forward();
     }
 }
 
