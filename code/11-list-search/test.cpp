@@ -67,3 +67,12 @@ TEST_CASE("Can search a sorted list") {
     result = find_unsorted(my_list, 54);
     REQUIRE(result == my_list.cend());
 }
+
+TEST_CASE("Simple Binary search") {
+    int values [] {-42, -5, 2, 5, 10, 19, 21};
+    
+    REQUIRE(binary_search(values, 7, 21) == 6);
+    REQUIRE(binary_search(values, 7, 5) == 3);
+    REQUIRE(binary_search(values, 7, 54) == -1);
+    
+}
