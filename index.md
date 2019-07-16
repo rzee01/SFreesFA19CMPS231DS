@@ -30,14 +30,14 @@
 
 ## Week 6 (10/10)
 - **Module 12**:  STL List and searching                        [X]
-- **Module 13**:  Big O Notation and Algorithm Analysis
+- **Module 13**:  Big O Notation and Algorithm Analysis         [X]
 - Review for exam
 
 ## Week 7 (10/17)
 - **Exam 1**:  Covers all material up to *and including* linked lists.  Big O notation will not be covered.  Exam will be three hours, and including coding.  It will be open notes, open book, and open internet (subject to academic integrity expectations).
 
 ## Week 8 (10/24)
-- **Module 13**:  Big O Notation and Algorithm Analysis (Revisit)
+- **Module 13**:  Big O Notation and Algorithm Analysis (Revisit)   [X]
 - **Module 14**:  Recursion - binary search on arrays.
 - **Module 15**:  Binary Search Trees
 
