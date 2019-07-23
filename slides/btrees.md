@@ -103,6 +103,25 @@ Let's implement the `insert` and `find` methods.
 ]
 
 ---
+# Destructor
+Remember - we are on the hook for making sure our memory is cleaned up.
+```c++
+~BSTree() {
+    if (root != nullptr) {
+        delete root;
+    }
+}
+```
+```c++
+~node() {
+    if (left != nullptr)
+        delete left;
+    if (right != nullptr)
+        delete right;
+}
+```
+
+---
 # Does it work?
 .split-left[
 <img style='width:300px' src='../images/stop.png'/>
@@ -114,14 +133,38 @@ Let's implement the `insert` and `find` methods.
 ]
 
 ---
-# Breadth-first vs. Depth-first
-
+# Traversal
+.split-left[
+<img style='width:200px' src='../images/btree-traversal.png'/>
+]
+.split-right[
+- **Ascending**:  Print left, print current, print right
+ - 9, 18, 20, 24, 24, 39, 42, 56
+- **Pre-Order**:  Print current, print left, print right.
+ - 34, 18, 9, 24, 20, 39, 56, 42
+]
 .callout[
-Either of these could be used for testing purposes, let's implement depth-first for now, and if we have time we'll look at breadth-first.
+Either of these could be used for testing purposes, let's implement ascending.
 ]
 
 ---
-# Implementing Depth-first traveral
+# Ascending traversal
+```c++
+// public method to return list
+std::list<int> as_list() {
+    list<int> traversal;
+    _as_list(traversal, root);
+    return traversal;
+}
+
+// private method - recursive
+void _as_list(std::list<int> &list, node * tree) {
+	if (tree == NULL ) return;
+	_as_list(list, tree->left);
+	list.push_back(tree->value);
+	_as_list(list, tree->right);
+}
+```
 
 ---
 # Removal?
@@ -143,7 +186,7 @@ Case 2 is the most interesting - why are we doing this?
 <img style='width:600px' src='../images/btree-remove-case-1.png'/>
 
 ---
-# Case 2 - Two Childre
+# Case 2 - Two Children
 
 .split-left[
 <img style='width:500px' src='../images/btree-remove-case-2-0.png'/>
@@ -201,7 +244,12 @@ Case 2 is the most interesting - why are we doing this?
 
 ---
 # Implementing Remove
-
+While implementing the `remove` function, we need to be very careful with memory.
+- When deleting a leaf node (left and right are null), there isn't much to be afraid of.
+- When deleting a node with 1 or more children, we need to be cautious....
+ - The parent of the node being deleted will end up pointing to one of the node's children.
+ - Calling the destructor on the node being deleted will recursively delete the entire tree rooted at it's left and right!
+ - We must set a soon-to-be deleted node's children to `nullptr` before deleting it.
 ---
 # How fast is find?
 Find is *approximately* O(log<sub>n</sub>)...
@@ -235,14 +283,16 @@ As it is now, the tree's balance is completely determined by the **order** of in
 
 ---
 # Identifying Balance
-- **depth** can be calculated - recursively.
- - `depth(node*n)`
-  - If `node != nullptr`, return 1 + `max(depth(node->left), depth(node->right))`
-
-- If the depth of `node->left` and `node->right` are equal, then the tree (rooted at `n`) is **balanced.
-
+```c++
+bool depth(node *n) {
+    if (node == nullptr) return 0;
+    else {
+        return 1 + max(depth(node->left), depth(node->right));
+    }
+}
+```
+- If the depth of `node->left` and `node->right` are equal, then the tree (rooted at `n`) is **balanced**.
 - **However**, we can't declare victory after looking at the root.
-
 <img style='width:500px' src='../images/btree-shallow-balanced.png'/>
 
 ---
@@ -284,16 +334,170 @@ bool is_avl(node *n) {
 
 
 ---
-# Single rotation animations
+# Single rotation (Case 1 & 4)
+From the deepest non-AVL node:
+- Extend one level down, **in the direction of the imbalance**.
+- Rotate the node up, re-inserting accordingly:
+ - Since the rotated node has three children as you rotate up, the middle tree is re-inserted in the appropriate position.
 
 ---
-# Double rotation animations
+# Single rotation (Case 1 & 4)
+From the deepest non-AVL node:
+- Extend one level down, **in the direction of the imbalance**.
+- Rotate the node up, re-inserting accordingly:
+ - Since the rotated node has three children as you rotate up, the middle tree is re-inserted in the appropriate position.
+
+<img style='width:300px' src='../images/btree-avl-single-1.png'/>
+
+---
+# Single rotation (Case 1 & 4)
+From the deepest non-AVL node:
+- Extend one level down, **in the direction of the imbalance**.
+- Rotate the node up, re-inserting accordingly:
+ - Since the rotated node has three children as you rotate up, the middle tree is re-inserted in the appropriate position.
+
+<img style='height:300px' src='../images/btree-avl-single-1.png'/>
+<img style='height:300px' src='../images/btree-avl-single-2.png'/>
+
+---
+# Single rotation (Case 1 & 4)
+From the deepest non-AVL node:
+- Extend one level down, **in the direction of the imbalance**.
+- Rotate the node up, re-inserting accordingly:
+ - Since the rotated node has three children as you rotate up, the middle tree is re-inserted in the appropriate position.
+
+<img style='height:300px' src='../images/btree-avl-single-2.png'/>
+<img style='height:300px' src='../images/btree-avl-single-3.png'/>
+
+---
+# Single rotation (Case 1 & 4)
+From the deepest non-AVL node:
+- Extend one level down, **in the direction of the imbalance**.
+- Rotate the node up, re-inserting accordingly:
+ - Since the rotated node has three children as you rotate up, the middle tree is re-inserted in the appropriate position.
+
+<img style='height:300px' src='../images/btree-avl-single-2.png'/>
+<img style='height:300px' src='../images/btree-avl-single-4.png'/>
+
+---
+# Single rotation example
+Add the following numbers:
+- 3, 2, 1, 4, 5, 6, 7
+- Preserve AVL after each insertion.
+<img style='width:500px' src='../images/btree-avl-single-example.png'/>
+
+---
 
 
+# Interior imbalance
+For Cases 2 & 3 (interior imbalance), a single rotation will still leave use with an imbalanced tree.
+
+<img style='height:300px' src='../images/btree-avl-double-fail.png'/>
+
+---
+# Double rotations
+From the deepest non-AVL node:
+- Extend **two** levels down, in the direction of the imbalance.
+- Rotate the node up one, reinserting as you do in single rotations.
+- Rotate the **same node** up again - reinserting the middle again.
+
+<img style='height:300px' src='../images/btree-avl-double-1.png'/>
+<img style='height:300px' src='../images/btree-avl-double-2.png'/>
+
+---
+# Double rotations
+From the deepest non-AVL node:
+- Extend **two** levels down, in the direction of the imbalance.
+- Rotate the node up one, reinserting as you do in single rotations.
+- Rotate the **same node** up again - reinserting the middle again.
+
+<img style='height:200px' src='../images/btree-avl-double-3.png'/>
+
+---
+# Double rotations
+From the deepest non-AVL node:
+- Extend **two** levels down, in the direction of the imbalance.
+- Rotate the node up one, reinserting as you do in single rotations.
+- Rotate the **same node** up again - reinserting the middle again.
+
+<img style='height:200px' src='../images/btree-avl-double-4.png'/>
+
+---
+# Double rotations
+From the deepest non-AVL node:
+- Extend **two** levels down, in the direction of the imbalance.
+- Rotate the node up one, reinserting as you do in single rotations.
+- Rotate the **same node** up again - reinserting the middle again.
+
+<img style='height:200px' src='../images/btree-avl-double-5.png'/>
+
+---
+# Double rotations
+From the deepest non-AVL node:
+- Extend **two** levels down, in the direction of the imbalance.
+- Rotate the node up one, reinserting as you do in single rotations.
+- Rotate the **same node** up again - reinserting the middle again.
+
+<img style='height:200px' src='../images/btree-avl-double-6.png'/>
+
+---
+# Double rotations
+From the deepest non-AVL node:
+- Extend **two** levels down, in the direction of the imbalance.
+- Rotate the node up one, reinserting as you do in single rotations.
+- Rotate the **same node** up again - reinserting the middle again.
+
+<img style='height:200px' src='../images/btree-avl-double-7.png'/>
+
+---
+# Double rotation:  Example
+Building on the previous tree we built...
+- Insert 16, 15, 14, 13, 12, 11, 10, 8, 9
+
+<img style='height:200px' src='../images/btree-avl-double-example.png'/>
+
+.callout[
+Complete this as a lab now - showing the tree **after each insert**.
+]
 ---
 # Comparing List and BSTree
-
+<table>
+    <thead>
+        <tr>
+            <th>
+                Operation
+            </th>
+            <th>
+                Sorted Array
+            </th>
+            <th>
+                Sorted Linked List
+            </th>
+            <th>
+                BSTree
+            </th>
+        </tr>
+    <tbody>
+        <tr>
+            <td>insert</td>
+            <td>O(N)</td>
+            <td>O(N)</td>
+            <td>O(log<sub>N</sub>)</td>
+        </tr>
+        <tr>
+            <td>find</td>
+            <td>O(log<sub>N</sub>)</td>
+            <td>O(N)</td>
+            <td>O(log<sub>N</sub>)</td>
+        </tr>
+        <tr>
+            <td>remove</td>
+            <td>O(N)</td>
+            <td>O(N)</td>
+            <td>O(log<sub>N</sub>)</td>
+        </tr>
 ---
 # Up next...
+- We used integers to keep the syntax a bit easier - but we could certainly implement this as a templated data structure.  **Which operations would need to be supported on the type?**.
 - Trees are a useful structure - and they don't need to always be for search!
 - They also don't always need to be implemented as "linked" nodes - they can be stored in arrays too!
