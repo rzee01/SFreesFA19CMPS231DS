@@ -39,21 +39,20 @@
 ## Week 8 (10/24)
 - **Module 13**:  Big O Notation and Algorithm Analysis (Revisit)   [X]
 - **Module 14**:  Recursion - binary search on arrays.              [X]
-- **Module 15**:  Binary Search Trees
+- **Module 15**:  Binary Search Trees                               [X]
 - HOMEWORK:  Make our implementation a template, and preserve AVL!
 
 ## Week 9 (10/31)
-- **Module 16**:  Array-Based Binary Search Trees
-- **Module 17**:  Priority Queues, Heaps, STL priority_queue
+- **Module 16**:  Priority Queues, Heaps, STL priority_queue        [/]  (needs code)
 - **Lab Assignment**
 
 ## Week 10 (11/7)
-- **Module 18**:  Graphs and Search
+- **Module 17**:  Graphs and Search
 - **Lab Assignment**
 
 ## Week 11 (11/14)
-- **Module 19**:  Hashing and Hashtables
-- **Module 20**:  C++ Maps
+- **Module 18**:  Hashing and Hashtables
+- **Module 19**:  C++ Maps
 - **Lab Assignment**
 
 ## Week 12 (11/21)
@@ -63,10 +62,10 @@
 *No class held - Thanksgiving break*
 
 ## Week 14 (12/5)
-- **Module 21**:  Sorting - the simple algorithms
-- **Module 22**:  Sorting - radix sort
+- **Module 20**:  Sorting - the simple algorithms
+- **Module 21**:  Sorting - radix sort
 - **Lab Assignment**
 
 ## Week 15 (12/12)
-- **Module 23**:  Sorting - merge sort
-- **Module 24**:  Sorting - quick sort
+- **Module 22**:  Sorting - merge sort
+- **Module 23**:  Sorting - quick sort

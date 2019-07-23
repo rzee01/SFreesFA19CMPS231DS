@@ -242,6 +242,7 @@ Case 2 is the most interesting - why are we doing this?
 - The minimum of the right side is a suitable node to replace the deleted node - as it is *greater* than anything on the left, and clearly *less* than anything remaining on right.
 ]
 
+
 ---
 # Implementing Remove
 While implementing the `remove` function, we need to be very careful with memory.
