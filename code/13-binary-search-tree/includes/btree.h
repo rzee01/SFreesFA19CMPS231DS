@@ -95,7 +95,7 @@ private:
 
     bool _find(node *tree, int value)
     {
-        if (tree == NULL)
+        if (tree == nullptr)
             return false;
 
         else if (tree->value == value)
@@ -114,7 +114,7 @@ private:
 
     void _as_list(std::list<int> &list, node *tree)
     {
-        if (tree == NULL)
+        if (tree == nullptr)
             return;
         _as_list(list, tree->left);
         list.push_back(tree->value);
@@ -188,7 +188,7 @@ private:
         {
             throw std::runtime_error("remove_and_return_minimum called on null tree");
         }
-        if (tree->left == NULL)
+        if (tree->left == nullptr)
         {
             // this is the minimum
             int tmp = tree->value;
