@@ -43,8 +43,8 @@
 - HOMEWORK:  Make our implementation a template, and preserve AVL!
 
 ## Week 9 (10/31)
-- **Module 16**:  Priority Queues, Heaps, STL priority_queue        [/]  (needs code)
-- **Lab Assignment**
+- **Module 16**:  Priority Queues, Heaps, STL priority_queue        [X]  
+- **Lab Assignment**                                                [ ]
 
 ## Week 10 (11/7)
 - **Module 17**:  Graphs and Search
