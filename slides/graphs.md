@@ -147,9 +147,8 @@ So far graphs aren't very interesting... but now let's start determining if ther
 One easy option would be to have a `visited` flag on the vertex object...
 - **However** - the vertex object is a template type - it's anything!
 
-Another option is to hold a list of vertices visited.  Then we'd just need to search the list.
-- **What data structure supports search well?**
-- What additional operators would we need supported on the vertex type?
+Another option is to hold a list of vertices visited.  Then we'd just need to lookup the vertex to see if it was visited.
+- **What data structure supports lookup well?**
 
 ---
 # Depth-first or Breadth-first
@@ -199,7 +198,7 @@ What is the runtime of our path finding algorithms?
 - Look at all the data structures we used!
 --
 
-    - binary search tree
+    - map
     - stack
     - queue
     - priority queue

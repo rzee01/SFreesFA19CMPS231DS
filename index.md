@@ -47,12 +47,12 @@
 - **Lab Assignment**                                                [ ]
 
 ## Week 10 (11/7)
-- **Module 17**:  Graphs and Search
+- **Module 17**:  Hashing and Hashtables
+- **Module 18**:  C++ Maps
 - **Lab Assignment**
 
 ## Week 11 (11/14)
-- **Module 18**:  Hashing and Hashtables
-- **Module 19**:  C++ Maps
+- **Module 19**:  Graphs and Search                                 [/]  Need shortest path code... remove lambda?
 - **Lab Assignment**
 
 ## Week 12 (11/21)
