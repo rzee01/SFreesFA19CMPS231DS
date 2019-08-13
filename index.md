@@ -62,10 +62,12 @@
 *No class held - Thanksgiving break*
 
 ## Week 14 (12/5)
-- **Module 20**:  Sorting - the simple algorithms
-- **Module 21**:  Sorting - radix sort
+- **Module 20**:  Sorting - the simple algorithms                   [/]  Need code
+- **Module 21**:  Sorting - radix sort                              [/]  Need code
+- **Module 22**:  Sorting - heap sort
 - **Lab Assignment**
 
+
 ## Week 15 (12/12)
-- **Module 22**:  Sorting - merge sort
-- **Module 23**:  Sorting - quick sort
+- **Module 23**:  Sorting - merge sort
+- **Module 24**:  Sorting - quick sort
