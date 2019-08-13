@@ -47,9 +47,9 @@
 - **Lab Assignment**                                                [ ]
 
 ## Week 10 (11/7)
-- **Module 17**:  Hashing and Hashtables
-- **Module 18**:  C++ Maps
-- **Lab Assignment**
+- **Module 17**:  Hashing and Hashtables                            [/] Need implementation w/ student object (== and % overload).
+- **Module 18**:  C++ Maps                                          [X]
+- **Lab Assignment**                                                [ ] Lab with STL maps
 
 ## Week 11 (11/14)
 - **Module 19**:  Graphs and Search                                 [/]  Need shortest path code... remove lambda?
