@@ -64,10 +64,10 @@
 ## Week 14 (12/5)
 - **Module 20**:  Sorting - the simple algorithms                   [/]  Need code
 - **Module 21**:  Sorting - radix sort                              [/]  Need code
-- **Module 22**:  Sorting - heap sort
+- **Module 22**:  Sorting - heap sort                               [/]  Need code
 - **Lab Assignment**
 
 
 ## Week 15 (12/12)
-- **Module 23**:  Sorting - merge sort
-- **Module 24**:  Sorting - quick sort
+- **Module 23**:  Sorting - merge sort                              [/]  Need code
+- **Module 24**:  Sorting - quick sort                              [/]  Need code
