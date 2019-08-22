@@ -35,19 +35,63 @@ class: center, middle, inverse
 
 ---
 # Compilers
-Explain what a compiler is
+C++ source code is simply ASCII text - which can be mapped to binary executable instructions that your CPU knows what to do with.
+- Compilation is done on **one source file** independently.
+- The output of compilation is a new file, containing **binary instructions**.
+- The binary is specific to (1) the OS and (2) the CPU instruction set.
+.callout[
+**Note** the output of the compiler is **not** executable.  The extension is generally `.obj` or `.o` - and is called *an object file*.
+]
 ---
 # Compiling vs Linking
-Explain linking is.
+Object files need to be stitched together into a single executable program.
+- We typically divide source code into files
+- Files refer to each other through includes.
+- A file can be **compiled** even if it references another file (i.e. a function in another file) - *but eventually all the functions/classes/code references must be linked*.
+
+.callout[
+- Linking takes a set of **object files**, one (and only one) of which includes an entry point (`main`), and combines it into a single exectuable (`.exe` on Windows).  
+- The linker also checks to make sure all referenced code is included.
+]
+
 ---
 # Visual Studio
-Explain what Visual Studio is...
+Many of you are familiar with using Microsoft Visual Studio...
+
+Visual Studio is
+- An editor (let's you type code, with syntax highlighting)
+- A compiler
+- A linker
+
+**Visual Studio is an Integrated Development Environment (IDE)**.
+
+.callout[
+Visual Studio (C++) is Windows-only.  On other platforms, there are other IDEs.  In addition, many developers use independent, yet simpler tools to create their code.
+]
 ---
 # GNU Compiler
-Explain what GNU is
+When we say "independent" tools - we mean that the editor and the compiler aren't coupled together...
+- The GNU C++ (and C) compiler is a free (open source) compiler - but it's just a command line tool - not an editor!
+- It handles compilation, and can also do some linking.
+- Unlike Visual Studio, linking must be manually specified by the programmer, via scripts.  More on this in a moment.
 ---
 # clang Compiler
-Explain what clang is
+`clang` is a newer, and very popular open source compiler for C and C++ (and others).
+- It is quite similar to GNU, and can (for the most part) be used interchangeably
+- `clang` is the compiler used on Mac OS.
+---
+# Editor?
+If we use GNU or `clang`, we still need a code editor.  There are many options, for every platform.
+- Emacs
+- vim
+- Visual Studio Code
+- Sublime Text
+- Notepad++
+
+.callout[
+Emacs and vim have steep learning curve.  We won't use them here, but I encourage you to learn them someday :)  They are **everywhere**.
+]
+
 ---
 # Configuration
 - Configuring your build for `g++` and `clang` can be an intimidating task, especially if you are only familiar with Visual Studio.
@@ -71,13 +115,13 @@ CMake is a tool to replace much of what `make` does in UNIX environments.
 This environment will work the same whether you use Windows, Mac OS, or Linux.
 ---
 # Setting yourself up
-**Windows** - The easiest path is to install Cygwin. See the [Windows Guide](../guies/dev-setup-windows.html)
+**Windows** - The easiest path is to install Cygwin. See the [Windows Guide](../guides/dev-setup-windows.html)
 
-**Mac OS** - You do not need Xcode, and if you haven't already installed it, I don't recommend that you do for this class.  See the [Mac OS Guide](../guies/dev-setup-macos.html)
+**Mac OS** - You do not need Xcode, and if you haven't already installed it, I don't recommend that you do for this class.  See the [Mac OS Guide](../guides/dev-setup-mac-os.html)
 
-**Linux** - The instructions for Linux are very straigtforward.  See the [Linux Guide](../guies/dev-setup-linux.html)
+**Linux** - The instructions for Linux are very straigtforward.  See the [Linux Guide](../guides/dev-setup-linux.html)
 
-.callout[I have additional details [here](../code/readme.html)]
+.callout[I have additional details [here](../code/readme.md)]
 
 ---
 <img style="float:left;width:70px;padding-top:1em;padding-right:2rem" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"/>

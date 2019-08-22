@@ -49,7 +49,7 @@ You are expected to already know C++:
 - Pointer-Based Data Structures
  - Pointer Review
  - Linked LIsts
-- **Exam 1 - October 10th**
+- **Exam 1 - October 17th**
 
 ---
 # Topics
@@ -117,7 +117,7 @@ A three hours (plus) lecture is far too long for me to keep your attention... so
  - We will have lecture for roughly 2 hours
  - We will complete an in-class lab assignment during the remaining time.
 
-Your **Attendance** grade **is your lab grade**.  Labs will be required to be completed **in class**, but the end of the lecture period.  
+Your **Attendance** grade **is your lab grade**.  Labs will be required to be completed **in class**, by the end of the lecture period.  
 
 You must be physically present to receive credit.
 
@@ -157,11 +157,11 @@ You will always have the full lecture period to complete the exams.
             <td> Labs </td>
         </tr>
         <tr>
-            <td> 20% </td>
+            <td> 10% </td>
             <td> Homework </td>
         </tr>
         <tr>
-            <td> 40% </td>
+            <td> 50% </td>
             <td> Exams (&times; 2) </td>
         </tr>
         <tr>
