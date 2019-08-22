@@ -136,7 +136,7 @@ mkdir my_school_work
 
 cd my_school_work
 
-git clone https://github.com/freezer333/cmps231.git
+git clone https://github.com/scottfrees/cmps231.git
 ```
 
 ---
