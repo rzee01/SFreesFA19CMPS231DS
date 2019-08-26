@@ -301,15 +301,18 @@ TEST_CASE("Next on node with next produces valid iterator")
 // When you are building a template class, ALWAYS test with at least
 // another data type to ensure that the template has been constructed
 // correctly.  It's easy to miss a T and replace it with int!
-TEST_CASE("Test iteration forwards") {
+TEST_CASE("Test iteration forwards")
+{
     List<Rational> list;
-    for ( int i = 0; i < 10; i++ ) {
+    for (int i = 0; i < 10; i++)
+    {
         list.push_back(Rational(i, 1));
     }
     auto it = list.begin();
-    int i =0 ;
+    int i = 0;
     Rational last_val(-1, 1);
-    while ( it.valid() ) {
+    while (it.valid())
+    {
         last_val = it.data();
         REQUIRE(last_val == Rational(i, 1));
         it.forward();
@@ -318,15 +321,18 @@ TEST_CASE("Test iteration forwards") {
     REQUIRE(last_val == Rational(9, 1));
 }
 
-TEST_CASE("Test iteration backwards") {
+TEST_CASE("Test iteration backwards")
+{
     List<Rational> list;
-    for ( int i = 0; i < 10; i++ ) {
+    for (int i = 0; i < 10; i++)
+    {
         list.push_back(Rational(i, 1));
     }
     auto it = list.end();
-    int i =9 ;
+    int i = 9;
     Rational last_val(-1, 1);
-    while ( it.valid() ) {
+    while (it.valid())
+    {
         last_val = it.data();
         REQUIRE(last_val == Rational(i, 1));
         it.back();
@@ -335,7 +341,8 @@ TEST_CASE("Test iteration backwards") {
     REQUIRE(last_val == Rational(0, 1));
 }
 
-TEST_CASE("Test insertion") {
+TEST_CASE("Test insertion")
+{
     List<int> list;
     list.push_back(1);
     list.push_back(2);
@@ -346,26 +353,32 @@ TEST_CASE("Test insertion") {
     // Test that the value can be added at the head
     list.insert(it, 0);
     int v = 0;
-    for ( auto i = list.begin(); i.valid(); i.forward() ){
+    for (auto i = list.begin(); i.valid(); i.forward())
+    {
         REQUIRE(i.data() == v);
         v++;
     }
 
     // Test that the value can be added in the "middle".
     // STL invalidates the iterator if the list has changed, we didn't - but
-    // we certainly need to get a new one to be safe - as the data 
+    // we certainly need to get a new one to be safe - as the data
     // in the list changed.
-    it = list.end(); // 4
-    it.back();  // 3
-    it.back();  // 2
-    list.insert(it, 42);  // insert before 2
+    it = list.end();     // 4
+    it.back();           // 3
+    it.back();           // 2
+    list.insert(it, 42); // insert before 2
 
     it = list.begin();
-    REQUIRE(it.data() == 0);  it.forward();
-    REQUIRE(it.data() == 1);  it.forward();
-    REQUIRE(it.data() == 42);  it.forward();
-    REQUIRE(it.data() == 2); it.forward();
-    REQUIRE(it.data() == 3);  it.forward();
-    REQUIRE(it.data() == 4);  it.forward();
+    REQUIRE(it.data() == 0);
+    it.forward();
+    REQUIRE(it.data() == 1);
+    it.forward();
+    REQUIRE(it.data() == 42);
+    it.forward();
+    REQUIRE(it.data() == 2);
+    it.forward();
+    REQUIRE(it.data() == 3);
+    it.forward();
+    REQUIRE(it.data() == 4);
+    it.forward();
 }
-
