@@ -2,7 +2,7 @@
 
 ## Data Structures and Algorithms
 **Meeting Time**:  Thursday, 6:05pm - 9:45pm
-**Location**:  G 301
+**Location**:  ASB 429
 **Instructor**:   Scott Frees, Professor of Computer Sciennce
 
 ### Contact Information
