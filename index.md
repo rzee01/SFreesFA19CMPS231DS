@@ -33,7 +33,7 @@ The following guides will be useful to you throughout the course, but especially
 ### Programming Environment
 Our code environment is designed to be as similar as possible on all three major operating systems - Windows, MacOS, and Linux.  It is also designed to get you more accustomed to very popular software development tools used in industry.  No matter which OS you are using, I'm going to have you working from the command line (terminal) a fair amount, and using simple file-based tools rather than large integrated devleopment environments (IDEs) like Visual Studio, XCode, and Eclipse.
 - [Windows](guides/dev-setup-windows.html)
-- [Notes on Ramapo Lab Machines](guies/dev-setup-lab.html)
+- [Notes on Ramapo Lab Machines](guides/dev-setup-lab.html)
 - [MacOS](guides/dev-setup-mac-os.html)
 - [Linux](guides/dev-setup-linux.html)
 
