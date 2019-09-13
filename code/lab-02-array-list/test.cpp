@@ -32,7 +32,8 @@ TEST_CASE("Get returns the correct value")
     ArrayList al;
     al.prepend(5);
     al.prepend(10);
-    REQUIRE(al.get(1) == 10);
+    // expect 10, 5
+    REQUIRE(al.get(1) == 5);
 }
 
 TEST_CASE("Get throws exception if index is less than 0")
@@ -66,5 +67,6 @@ TEST_CASE("Find returns the correct index for the given value")
     al.prepend(10);
     al.prepend(15);
     al.prepend(20);
-    REQUIRE(al.find(15) == 2);
+    // expect 20, 15, 10, 5
+    REQUIRE(al.find(15) == 1);
 }

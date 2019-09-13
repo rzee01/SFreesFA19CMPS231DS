@@ -17,6 +17,14 @@ TEST_CASE("Sorting in order should work", "[in order]")
     REQUIRE((x <= y && y <= z));
 }
 
+TEST_CASE("Sorting reversed", "[reversed]")
+{
+    int x = 7, y = 6, z = 5;
+    sort_in_place(x, y, z);
+    REQUIRE((x <= y && y <= z));
+}
+
+
 TEST_CASE("Sorting equal should work", "[equal]")
 {
     int x = 5, y = 5, z = 5;
